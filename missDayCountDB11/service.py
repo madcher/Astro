@@ -80,11 +80,11 @@ def handler(event, context):
     #token = "Token 0db412ef12f044d4062495f3ca26bf789b6f110f"
     
     dictSlack = {
-            "strChannel" : "#testbot2",
-            "strName" : "TestBot",
+            "strChannel" : "#random",
+            "strName" : "StatBot",
             "strIconUrl" : "https://astrodigital.com/images/meta/apple-touch-icon-152x152.png",
             "strTitle" : "report",
-            "strHookUrl" : "https://hooks.slack.com/services/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"
+            "strHookUrl" : "https://hooks.slack.com/services/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"
     }
 
     def writeToSlack(dictSlack,jsonAttachments):
@@ -116,19 +116,15 @@ def handler(event, context):
     }]
     writeToSlack(dictSlack,jsonAttachments)
 
-##
-##    jsonAttachments2 = [{
-##            "fallback": "Required plain-text summary of the attachment.",
-##            "color": "#015752",
-##            "fields": [{
-##                    "title": "Missed days:",
-##                    "value": str(event),
-##                    "Date": ""
-##                    
-##            }]
-##    }]
-##    writeToSlack(dictSlack,jsonAttachments2)
-
+    try:
+        response = table.delete_item(
+            Key={
+                'taskID': 'miss'
+            }
+        )
+    except ClientError as e:
+        print(e.response['Error']['Message'])
+        
     res=str(event)+str(res)          
 
 
