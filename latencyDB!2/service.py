@@ -26,19 +26,19 @@ from boto3.dynamodb.conditions import Key, Attr
 headers = {
 	'content-type': "application/json",
 
-	'authorization': "Token 0db412ef12f044d4062495f3ca26bf789b6f110f" #Alex
-        #'authorization': "Token 5cd1d86622ece4d66cfe218b1b6c020e2a6ac1db" #My
+	'authorization': "" #Alex
+        #'authorization': "" #My
 	}
 # вход на сайт
 
 def handler(event, context):
     res=""
-    token = "Token 0db412ef12f044d4062495f3ca26bf789b6f110f"
+    token = ""
     headers = {
 	'content-type': "application/json",
         
 	'authorization': token #Alex
-        #'authorization': "Token 5cd1d86622ece4d66cfe218b1b6c020e2a6ac1db" #My
+        #'authorization': "" #My
 	}
     
     results_url = "https://api.astrodigital.com/v2.0/results?status=INPROGRESS&page_size=1000" #сайт куда делаем запрос
