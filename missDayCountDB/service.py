@@ -15,8 +15,8 @@ def handler(event, context):
     headers = {
             'content-type': "application/json",
 
-            'authorization': "Token 0db412ef12f044d4062495f3ca26bf789b6f110f" #Alex
-            #'authorization': "Token 5cd1d86622ece4d66cfe218b1b6c020e2a6ac1db" #My
+            'authorization': "" #Alex
+            #'authorization': "b" #My
             }
     # вход на сайт
     mass=[]
@@ -57,8 +57,8 @@ def handler(event, context):
 
 
 
-    #token = "Token 0db412ef12f044d4062495f3ca26bf789b6f110f"
-    token = "Token 1b3b686c7c061abe9649d3019b40c935764f3197"
+    #token = ""
+    token = ""
     ndvi(token)
     client = boto3.client('lambda')
     response = client.invoke(
