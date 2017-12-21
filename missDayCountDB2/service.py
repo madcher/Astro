@@ -13,7 +13,7 @@ from boto3.dynamodb.conditions import Key, Attr
 def handler(event, context):
     
     res=""
-    token = "Token 1b3b686c7c061abe9649d3019b40c935764f3197"
+    token = ""
 
         
 
@@ -77,7 +77,7 @@ def handler(event, context):
 
 
 
-    #token = "Token 0db412ef12f044d4062495f3ca26bf789b6f110f"
+    #token = ""
     
     dictSlack = {
             "strChannel" : "#random",
@@ -115,7 +115,7 @@ def handler(event, context):
             }]
     }]
     writeToSlack(dictSlack,jsonAttachments)  
-    token = "Token 1b3b686c7c061abe9649d3019b40c935764f3197"
+    token = ""
 
     client = boto3.client('lambda')
     response = client.invoke(
